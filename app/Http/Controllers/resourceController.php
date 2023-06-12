@@ -15,7 +15,7 @@ class resourceController extends Controller
     public function index()
     { $comics = config('comics');
       dump($comics);
-      return view('comics.index', compact('comics') );
+      return view('comics.index', compact('comics'));
     }
 
     /**
@@ -45,9 +45,11 @@ class resourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($key)
     {
-        //
+      $comics = config('comics');
+      dd($comics[$key]);
+
     }
 
     /**
