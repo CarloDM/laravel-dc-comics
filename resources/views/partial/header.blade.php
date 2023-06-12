@@ -8,6 +8,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('show')}}">show</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('comics.index')}}">comics</a>
+            </li>
 
           </ul>
     </div>

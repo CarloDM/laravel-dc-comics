@@ -5,7 +5,4 @@
     <h3 class="mt-3">Home page</h3>
 
 </div>
-
-
-
 @endsection

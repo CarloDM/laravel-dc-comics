@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ComicModel;
 
 class resourceController extends Controller
 {
@@ -12,8 +13,9 @@ class resourceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    { $comics = config('comics');
+      dump($comics);
+      return view('comics.index', compact('comics') );
     }
 
     /**
