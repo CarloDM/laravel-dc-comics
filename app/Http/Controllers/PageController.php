@@ -9,5 +9,8 @@ class PageController extends Controller{
   public function index(){
     return view('home');
   }
+  public function show(){
+    return view('show');
+  }
 }
 
