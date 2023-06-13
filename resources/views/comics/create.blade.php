@@ -107,7 +107,7 @@
   </div>
 
   {{-- --------------------------------------- --}}
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">create</button>
 </form>
 
 </div>
