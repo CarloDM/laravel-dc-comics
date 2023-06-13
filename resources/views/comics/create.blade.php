@@ -4,8 +4,23 @@
 
 <div class="container">
   <h3>create new comic</h3>
-<form action="{{route('comics.store')}}">
 
+  @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+
+                <ul>
+                    {{-- $errors->all() mette tutti gli errori in un array che ciclo osolo se $errors->any() è true --}}
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+
+                </ul>
+
+            </div>
+        @endif
+
+<form action="{{route('comics.store')}}" method="POST">
+  @csrf
   <div class="mb-1">
     <label for="title" class="form-label">title</label>
     <input
@@ -51,12 +66,12 @@
   </div>
   {{-- --------------------------------------- --}}
   <div class="mb-1">
-    <label for="sale-date" class="form-label">sale-date</label>
+    <label for="sale_date" class="form-label">sale-date</label>
     <input
     id='series'
     value='{{old('sale-date')}}'
     class="form-control"
-    name="sale-date"
+    name="sale_date"
     placeholder='AAAA-MM-DD'
     type='text'>
   </div>
@@ -73,7 +88,7 @@
   </div>
   {{-- --------------------------------------- --}}
   <div class="mb-1">
-    <label for="artists" class="form-label">type</label>
+    <label for="artists" class="form-label">artists</label>
     <input
     id='artists'
     value='{{old('artists')}}'
@@ -84,7 +99,7 @@
   </div>
   {{-- --------------------------------------- --}}
   <div class="mb-1">
-    <label for="writers" class="form-label">type</label>
+    <label for="writers" class="form-label">writers</label>
     <input
     id='writers'
     value='{{old('writers')}}'
@@ -99,9 +114,9 @@
     <textarea
     id='description'
     class="form-control"
-    name="title"
+    name="description"
     placeholder='description'
-    type='text'>
+    >
     {{old('description')}}
   </textarea>
   </div>

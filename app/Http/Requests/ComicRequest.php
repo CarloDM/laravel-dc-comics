@@ -54,18 +54,18 @@ class ComicRequest extends FormRequest
         'series.min' => ' minimo 2 caratteri',
         'series.max' => ' massimo 80 caratteri ',
 
-        'sale_date.required' => ' obbligatorio',
+        'sale_date.required' => ' sale date obbligatorio',
         'sale_date.min' => ' 10 caratteri xxxx-xx-xx',
         'sale_date.max' => ' 10 caratteri xxxx-xx-xx',
 
-        'type.required' => ' obbligatorio',
+        'type.required' => 'type obbligatorio',
         'type.min' => ' minimo 3 caratter',
         'type.max' => ' massimo 40 caratteri',
 
-        'artists.required' => 'obbligatorio',
+        'artists.required' => ' artist obbligatorio',
         'artists.min' => 'minimo 3 caratter',
         'artists.max' => 'massimo 255 caratteri',
-        'writers.required' => ' obbligatorio',
+        'writers.required' => ' writers obbligatorio',
         'writers.min' => ' minimo 3 caratter',
         'writers.max' => ' massimo 255 caratteri',
       ];
