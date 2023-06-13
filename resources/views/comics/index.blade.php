@@ -15,13 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($comics as $key=>$comic)
+        @foreach ($comics as $comic)
         <tr>
-          <td>{{$key}}</td>
-          <td>{{$comic['title']}}</td>
-          <td>{{$comic['series']}}</td>
-          <td>{{$comic['type']}}</td>
-          <td><a href="{{route('comics.show', $key)}}">description</a></td>
+          <td>{{$comic->id}}</td>
+          <td>{{$comic->title}}</td>
+          <td>{{$comic->series}}</td>
+          <td>{{$comic->type}}</td>
+          <td><a href="{{route('comics.show', $comic->id)}}">description</a></td>
         </tr>
 
         @endforeach

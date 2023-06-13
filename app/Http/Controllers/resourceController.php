@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ComicModel;
+use App\Models\Comic;
 
 class resourceController extends Controller
 {
@@ -13,8 +13,7 @@ class resourceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { $comics = config('comics');
-      dump($comics);
+    { $comics = Comic::all();
       return view('comics.index', compact('comics'));
     }
 
@@ -45,10 +44,9 @@ class resourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($key)
+    public function show(Comic $comic)
     {
-      $comics = config('comics');
-      dd($comics[$key]);
+      return view('comics.show', compact('comic'));
 
     }
 

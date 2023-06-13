@@ -5,9 +5,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('index')}}">home</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link" href="{{route('show')}}">show</a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a class="nav-link" href="{{route('comics.index')}}">comics</a>
             </li>
