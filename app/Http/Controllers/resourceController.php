@@ -50,10 +50,10 @@ class resourceController extends Controller
       $new_comic->description = $form_data['description'];
 
       $new_comic->save();
-      dd($new_comic);
+      // dd($new_comic);
       // ?? redirect non riconosciuto?
-      // retun redirect()->route('comics.show', $new_comic);
-      return view('comics.show', compact('new_comic'));
+      return redirect()->route('comics.show', $new_comic);
+      // return view('comics.show', compact('new_comic'));
     }
 
     /**
@@ -74,9 +74,9 @@ class resourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+      return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -86,9 +86,16 @@ class resourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ComicRequest $request, Comic $comic)
     {
-        //
+      $form_data = $request->all();
+
+
+      // niente token slug niente update???
+      // Add [_token] to fillable property to allow mass assignment on [App\Models\Comic].
+      $comic->update($form_data);
+
+      return view('pastas.show', compact('comic'));
     }
 
     /**
@@ -97,8 +104,9 @@ class resourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Comic $comic)
+    {   $title = $comic->title;
+        $comic->delete();
+        return redirect()->route('comics.index')->with('deleted', "comic: $title è stata eliminata correttamente");
     }
 }
