@@ -1,3 +1,6 @@
+@extends('layout.main')
+
+@section('content')
 <div class="container">
 <h3>{{$comic->title}}</h3>
 
@@ -8,11 +11,19 @@
     <li>
     {{$comic->series}}
     </li>
-    <li>
-    {{$comic->price}}
+    <li>artists:
+      {{$comic->artists}}
+    </li>
+    <li>writers:
+      {{$comic->writers}}
     </li>
   </ul>
 
   <p>{{$comic->description}}</p>
 
+  <h4>
+  {{$comic->price}}
+  </h4>
 </div>
+
+@endsection
